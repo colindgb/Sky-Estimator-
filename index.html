@@ -1,0 +1,48 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cappivate Estimator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="light-mode">
+    <aside class="sidebar">
+      <div class="brand">Cappivate</div>
+      <nav>
+        <ul>
+          <li onclick="showPage('dashboard')">Dashboard</li>
+          <li onclick="showPage('newQuote')">New Quote</li>
+          <li onclick="showPage('clients')">Clients</li>
+          <li onclick="showPage('templates')">Templates</li>
+          <li onclick="showPage('settings')">Settings</li>
+        </ul>
+      </nav>
+      <button class="toggle-theme" onclick="toggleTheme()">Toggle Dark Mode</button>
+    </aside>
+    <main>
+      <section id="dashboard" class="page">Welcome to the Cappivate Estimator</section>
+      <section id="newQuote" class="page" style="display: none;">
+        <h1>New Quote</h1>
+        <form id="quoteForm">
+          <input name="clientName" type="text" placeholder="Client Name" required />
+          <input name="address" type="text" placeholder="Address" />
+          <textarea name="scope" placeholder="Scope of Work"></textarea>
+          <input name="laborCost" type="number" placeholder="Labor Cost" />
+          <input name="materialCost" type="number" placeholder="Material Cost" />
+          <input name="miscCost" type="number" placeholder="Misc. Cost" />
+          <button type="submit">Generate Quote</button>
+        </form>
+        <div id="quoteOutput" class="quote-output"></div>
+      </section>
+      <section id="clients" class="page" style="display: none;">Clients page</section>
+      <section id="templates" class="page" style="display: none;">Templates page</section>
+      <section id="settings" class="page" style="display: none;">Settings page</section>
+    </main>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
